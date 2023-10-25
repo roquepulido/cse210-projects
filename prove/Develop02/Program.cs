@@ -79,7 +79,7 @@ class Program
                     journal = journal.LoadJournal(Console.ReadLine());
                     break;
                 case 4: // Save
-                    if (journal.Owner == null)
+                    if (journal.Owner == null || journal.Owner == "")
                     {
                         Console.WriteLine("Please enter the name of the owner of this log: ");
                         journal.Owner = Console.ReadLine();
