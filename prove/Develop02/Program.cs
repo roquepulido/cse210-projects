@@ -2,7 +2,7 @@ using System.Reflection.Metadata;
 
 class Program
 {
-    static List<string> prompsList = new() { "Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?" };
+    static List<string> _prompsList = new() { "Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?" };
     static public int GetMenu()
     {
 
@@ -32,7 +32,7 @@ class Program
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Choise invalid try again...");
             Console.ResetColor();
-            Console.WriteLine("Press any key to continue");
+            Console.WriteLine("Press enter to continue");
             Console.ReadLine();
             return GetMenu();
         }
@@ -47,18 +47,18 @@ class Program
         bool keepRunning = true;
         int choise;
         Journal journal = new();
+            Random rnd = new();
 
         Console.WriteLine("Welcome to my Journal App!");
         while (keepRunning)
         {
             choise = GetMenu();
             string prompt, log;
-            Random rnd = new();
             switch (choise)
             {
                 case 1: // Write
 
-                    prompt = prompsList[rnd.Next(prompsList.Count)];
+                    prompt = _prompsList[rnd.Next(_prompsList.Count)];
 
                     Console.Write("Prompt: ");
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -68,7 +68,7 @@ class Program
                     Console.ForegroundColor = ConsoleColor.Blue;
                     log = Console.ReadLine();
                     Console.ResetColor();
-                    journal.LogEntries.Add(new LogEntry(prompt, log));
+                    journal._logEntries.Add(new LogEntry(prompt, log));
                     break;
                 case 2: // Display
                     Console.WriteLine("");
@@ -79,10 +79,10 @@ class Program
                     journal = journal.LoadJournal(Console.ReadLine());
                     break;
                 case 4: // Save
-                    if (journal.Owner == null || journal.Owner == "")
+                    if (journal._owner == null || journal._owner == "")
                     {
                         Console.WriteLine("Please enter the name of the owner of this log: ");
-                        journal.Owner = Console.ReadLine();
+                        journal._owner = Console.ReadLine();
                     }
                     Console.WriteLine("For save the file, write the file name of leave blank for the default name(log)");
                     journal.SaveJournal(Console.ReadLine());

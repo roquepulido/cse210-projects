@@ -1,29 +1,29 @@
 class LogEntry
 {
-    public string Date { get; set; }
-    public string Prompt { get; set; }
-    public string Log { get; set; }
+    public string _date { get; set; }
+    public string _prompt { get; set; }
+    public string _log { get; set; }
 
     public LogEntry()
     {
-        Date = DateTime.Now.ToShortDateString();
-        Prompt = "";
-        Log = "";
+        _date = DateTime.Now.ToShortDateString();
+        _prompt = "";
+        _log = "";
     }
     public LogEntry(string prompt, string log)
     {
-        Date = DateTime.Now.ToString();
-        Prompt = prompt;
-        Log = log;
+        _date = DateTime.Now.ToString();
+        _prompt = prompt;
+        _log = log;
     }
     public void PrintEntry()
     {
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine($"Date: {Date}");
+        Console.WriteLine($"Date: {_date}");
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine($"Prompt: {Prompt}");
+        Console.WriteLine($"Prompt: {_prompt}");
         Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine($"Log: {Log}");
+        Console.WriteLine($"Log: {_log}");
         Console.ResetColor();
         Console.WriteLine();
     }

@@ -3,9 +3,9 @@ using System.Text.Json;
 
 class Journal
 {
-    public string Owner { get; set; }
-    public string BirthDate { get; set; }
-    public List<LogEntry> LogEntries { get; set; } = new List<LogEntry>();
+    public string _owner { get; set; }
+    public string _birthDate { get; set; }
+    public List<LogEntry> _logEntries { get; set; } = new List<LogEntry>();
     public Journal LoadJournal(string fileName)
     {
         if (fileName == "") fileName = "log.json"; else fileName += ".json";
@@ -13,7 +13,7 @@ class Journal
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"Journal with the name {fileName} loaded.");
         Console.ResetColor();
-        Console.WriteLine($"Press any key to continue...");
+        Console.WriteLine($"Press enter to continue...");
         Console.ReadLine();
         return JsonSerializer.Deserialize<Journal>(json);
 
@@ -29,22 +29,34 @@ class Journal
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"Journal saved with the name {fileName}");
         Console.ResetColor();
-        Console.WriteLine($"Press any key to continue...");
+        Console.WriteLine($"Press enter to continue...");
         Console.ReadLine();
 
     }
     public void PrintJournal()
     {
-        Console.WriteLine($"This log owner is {Owner}.");
-        for (int i = 0; i < LogEntries.Count; i++)
+        if (_logEntries.Count == 0)
         {
-            LogEntries[i].PrintEntry();
-            Console.WriteLine($"-------- Entry {i + 1} of {LogEntries.Count} ----------");
-            Console.WriteLine($"-------- Press any key for next log ----------");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("No entries.");
+            Console.WriteLine();
+            Console.ResetColor();
             Console.ReadLine();
         }
-        Console.WriteLine("End of log entries.");
-        Console.WriteLine();
+        else
+        {
+
+            Console.WriteLine($"This log owner is {_owner}.");
+            for (int i = 0; i < _logEntries.Count; i++)
+            {
+                _logEntries[i].PrintEntry();
+                Console.WriteLine($"-------- Entry {i + 1} of {_logEntries.Count} ----------");
+                Console.WriteLine($"-------- Press enter for next log ----------");
+                Console.ReadLine();
+            }
+            Console.WriteLine("End of log entries.");
+            Console.WriteLine();
+        }
     }
 
 }
