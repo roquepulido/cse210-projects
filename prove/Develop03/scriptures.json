@@ -1,0 +1,73 @@
+[
+  {
+    "Book": "Pearl of Great Price",
+    "SubBook": "Moses",
+    "Chapter": 1,
+    "Verses": [
+      {
+        "Number": 39,
+        "Text": "For behold, this is my work and my glory to bring to pass the immortality and eternal life of man."
+      }
+    ]
+  },
+  {
+    "Book": "Old Testament",
+    "SubBook": "Genesis ",
+    "Chapter": 1,
+    "Verses": [
+      {
+        "Number": 26,
+        "Text": "And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth."
+      },
+      {
+        "Number": 27,
+        "Text": "So God created man in his own image, in the image of God created he him; male and female created he them."
+      }
+    ]
+  },
+  {
+    "Book": "New Testament",
+    "SubBook": "Matthew",
+    "Chapter": 5,
+    "Verses": [
+      {
+        "Number": 14,
+        "Text": "Ye are the light of the world. A city that is set on an hill cannot be hid."
+      },
+      {
+        "Number": 15,
+        "Text": "Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house."
+      },
+      {
+        "Number": 16,
+        "Text": "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven."
+      }
+    ]
+  },
+  {
+    "Book": "Doctrine and Covenants",
+    "SubBook": "Doctrine and Covenants",
+    "Chapter": 1,
+    "Verses": [
+      {
+        "Number": 37,
+        "Text": "Search these commandments, for they are true and faithful, and the prophecies and promises which are in them shall all be fulfilled."
+      },
+      {
+        "Number": 38,
+        "Text": "What I the Lord have spoken, I have spoken, and I excuse not myself; and though the heavens and the earth pass away, my word shall not pass away, but shall all be fulfilled, whether by mine own voice or by the voice of my servants, it is the same."
+      }
+    ]
+  },
+  {
+    "Book": "Book of Mormon",
+    "SubBook": "1 Nephi",
+    "Chapter": 3,
+    "Verses": [
+      {
+        "Number": 7,
+        "Text": "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them."
+      }
+    ]
+  }
+]
