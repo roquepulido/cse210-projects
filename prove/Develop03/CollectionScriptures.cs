@@ -1,4 +1,3 @@
-using System.Data;
 using System.Text.Json;
 
 class CollectionScriptures
@@ -48,7 +47,24 @@ class CollectionScriptures
             Console.WriteLine();
         }
     }
-
+    public string PrintScripturesAndGetIndex()
+    {
+        Console.Clear();
+        Console.WriteLine($"Count of scriptures {this.Scriptures.Count}");
+        for (int i = 0; i < this.Scriptures.Count; i++)
+        {
+            if (this.Scriptures[i].Verses.Count == 1)
+            {
+                Console.WriteLine($"{i + 1}. {this.Scriptures[i].SubBook} {this.Scriptures[i].Chapter}:{this.Scriptures[i].Verses[0].Number}");
+            }
+            else
+            {
+                Console.WriteLine($"{i + 1}. {this.Scriptures[i].SubBook} {this.Scriptures[i].Chapter}:{this.Scriptures[i].Verses[0].Number}-{this.Scriptures[i].Verses[^1].Number}");
+            }
+        }
+        Console.WriteLine("Select one scripture by his number");
+        return Console.ReadLine();
+    }
     public List<Scripture> GetByBook(int bookNumber)
     {
         string book;
@@ -74,13 +90,7 @@ class CollectionScriptures
                 return new();
         }
         return _collectionScriptures.FindAll(
-            delegate (Scripture scripture)
-            {
-                return scripture.Book == book;
-            }
+            delegate (Scripture scripture) { return scripture.Book == book; }
         );
-
     }
-
-
 }

@@ -7,29 +7,22 @@ class Verse
 
     public int Number
     {
-        set
-        {
-            _number = value;
-        }
-        get
-        {
-            return _number;
-        }
+        set { _number = value; }
+        get { return _number; }
     }
     public string Text
     {
-        set
-        {
-            _text = value;
-        }
-        get
-        {
-            return _text;
-        }
+        set { _text = value; }
+        get { return _text; }
     }
     public Verse(int number, string text)
     {
         this.Number = number;
         this.Text = text;
+    }
+    public string[] GetWordList(){
+
+        return this.Text.Split(" ");
+
     }
 }
