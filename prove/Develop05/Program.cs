@@ -1,3 +1,12 @@
+/// <summary>
+/// Goal Program
+/// 
+/// Exceeds core requirements:
+/// 
+/// 1. Added the feature of saving all de data in an online database.
+/// 2. All the input data are validated to avoid mistaken typing.
+/// 3. All object is Serialize to JSON to be saved in the Database
+/// </summary>
 class Program
 {
 
@@ -7,19 +16,6 @@ class Program
         System.Console.WriteLine("Welcome");
         goalManager.Start();
         System.Console.WriteLine("Goodbye");
-
-        //db.Insert(goal.ToJson(), 1);
-        // TableGoal tableGoal = db.SelectById(2);
-
-        // System.Console.WriteLine(tableGoal.ToString());
-
-        // List<TableGoal> list = db.SelectAll();
-
-        // goal.Points = 5000;
-
-        // db.Update(goal.ToJson(), 2);
-        // list = db.SelectAll();
-        // db.Delete(2);
 
     }
 }
