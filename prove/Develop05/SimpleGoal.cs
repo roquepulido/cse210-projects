@@ -1,7 +1,7 @@
 
 using System.Text.Json;
 
-class SimpleGoal : Goal
+class SimpleGoal : Goalal
 {
     private bool _isComplete;
     public bool Completed
